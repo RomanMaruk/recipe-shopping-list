@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { RecipeInterface } from 'src/app/models/recipe.interface';
+import { Recipe } from '../../recipe.model';
 
 @Component({
   selector: 'app-recipe-item',
   templateUrl: './recipe-item.component.html',
-  styleUrls: ['./recipe-item.component.scss']
+  styleUrls: ['./recipe-item.component.scss'],
 })
 export class RecipeItemComponent implements OnInit {
+  @Input() recipe!: Recipe;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }

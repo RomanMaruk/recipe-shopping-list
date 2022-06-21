@@ -1,9 +1,9 @@
 <div class="container">
-  <app-header></app-header>
+  <app-header (navigateText)="changeNavigate($event)"></app-header>
   <div class="row">
     <div class="col-md-12">
-      <app-recipe></app-recipe>
-      <app-shopping-list></app-shopping-list>
+      <app-recipe *ngIf="title === 'recipe'"></app-recipe>
+      <app-shopping-list *ngIf="title === 'shopping'"></app-shopping-list>
     </div>
   </div>
 </div>
