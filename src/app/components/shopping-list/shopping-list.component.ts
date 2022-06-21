@@ -16,4 +16,8 @@ export class ShoppingListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addIndigrient(indigrient: IngridientsInterface) {
+    this.ingredients.unshift(indigrient)
+  }
+
 }
