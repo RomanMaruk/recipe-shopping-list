@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges, ɵɵsetComponentScope } from '@angular/core';
+import { Component, DoCheck, OnChanges, OnInit, SimpleChanges, ɵɵsetComponentScope } from '@angular/core';
 import { RecipeInterface } from 'src/app/models/recipe.interface';
 import { RecipeService } from 'src/app/services/recipe.service';
 
@@ -8,26 +8,15 @@ import { RecipeService } from 'src/app/services/recipe.service';
   styleUrls: ['./recipe.component.scss'],
   providers: [RecipeService]
 })
-export class RecipeComponent implements OnInit, OnChanges {
-  recipeDetail!: RecipeInterface;
+export class RecipeComponent implements OnInit {
+  recipeSelected!: RecipeInterface;
 
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
-
+    this.recipeService.recipeSelected.subscribe((recipe: RecipeInterface) => {
+      this.recipeSelected = recipe
+    })
   }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.recipeDetail = this.recipeService.recipeDetail
-    console.log('Onchanges Recipe', this.recipeDetail)
-  }
-
-  // setRecipeDetail(obj: RecipeInterface) {
-  //   this.recipeDetail = {
-  //     description: obj.description,
-  //     imagePath: obj.imagePath,
-  //     name: obj.name
-  //   }
-  // }
 
 }

@@ -7,19 +7,12 @@ import { RecipeService } from 'src/app/services/recipe.service';
   templateUrl: './recipe-detail.component.html',
   styleUrls: ['./recipe-detail.component.scss']
 })
-export class RecipeDetailComponent implements OnInit, OnChanges {
-  // @Input() recipeDetail!: RecipeInterface;
-  recipeDetail!: RecipeInterface;
+export class RecipeDetailComponent implements OnInit {
+  @Input() recipeDetail!: RecipeInterface;
 
   constructor(private recipeService: RecipeService) { }
 
-  ngOnChanges(recipeDetail: SimpleChanges): void {
-    console.log('Detail', recipeDetail)
-    this.recipeDetail = this.recipeService.recipeDetail
-  }
-
   ngOnInit(): void {
-    console.log('Detail')
   }
 
 }

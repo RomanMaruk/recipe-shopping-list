@@ -1,6 +1,9 @@
+import { EventEmitter } from "@angular/core";
 import { RecipeInterface } from "../models/recipe.interface";
 
 export class RecipeService {
+  recipeSelected = new EventEmitter<RecipeInterface>();
+
   private recipes: RecipeInterface[] = [
     {
       name: 'Test',
@@ -16,14 +19,8 @@ export class RecipeService {
     },
   ];
 
-  recipeDetail!: RecipeInterface;
-
   getRecipes() {
     return this.recipes.slice()
   }
 
-  onRecipeItem(item: RecipeInterface) {
-    this.recipeDetail = item
-    console.log('Services ', this.recipeDetail)
-  }
 }
