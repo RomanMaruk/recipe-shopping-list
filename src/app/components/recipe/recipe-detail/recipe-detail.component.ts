@@ -14,4 +14,8 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectDetail(value: any) {
+    console.log(value.innerHTML)
+  }
+
 }
