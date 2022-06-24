@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { IngridientsInterface } from 'src/app/models/shopingList.interface';
+import { ShoppingListService } from 'src/app/services/shopping-list.service';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -9,13 +10,13 @@ import { IngridientsInterface } from 'src/app/models/shopingList.interface';
 export class ShoppingEditComponent implements OnInit {
   @Output() indigrient = new EventEmitter<IngridientsInterface>();
 
-  constructor() { }
+  constructor(private shListService: ShoppingListService) { }
 
   ngOnInit(): void {
   }
 
   onAdd(obj: IngridientsInterface) {
-    this.indigrient.emit(obj)
+    this.shListService.addIndigrient(obj)
   }
 
 }
