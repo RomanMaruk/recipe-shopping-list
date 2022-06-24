@@ -13,7 +13,10 @@ export class ShoppingListService {
   }
 
   addIndigrient(item: IngridientsInterface) {
-    this.ingredients.push(item)
+    const findIndex = this.ingredients.findIndex((el) => el.name === item.name)
+    if (findIndex === -1) {
+      this.ingredients.push(item)
+    }
     this.indigredientChange.emit(this.ingredients.slice())
   }
 }
