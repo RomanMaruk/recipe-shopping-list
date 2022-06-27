@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { BasichightlightDirective } from './directive/basic-highlight.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './services/shopping-list.service';
+import { RecipeStartComponent } from './components/recipe/recipe-start/recipe-start.component';
+import { ResipeEditComponent } from './components/recipe/resipe-edit/resipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ShoppingListService } from './services/shopping-list.service';
     ShoppingListComponent,
     ShoppingEditComponent,
     BasichightlightDirective,
-    DropdownDirective
+    DropdownDirective,
+    RecipeStartComponent,
+    ResipeEditComponent
   ],
   imports: [
     BrowserModule,

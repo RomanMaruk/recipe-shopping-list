@@ -1,5 +1,4 @@
-import { Component, DoCheck, OnChanges, OnInit, SimpleChanges, ɵɵsetComponentScope } from '@angular/core';
-import { RecipeInterface } from 'src/app/models/recipe.interface';
+import { Component, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
@@ -9,14 +8,10 @@ import { RecipeService } from 'src/app/services/recipe.service';
   providers: [RecipeService]
 })
 export class RecipeComponent implements OnInit {
-  recipeSelected!: RecipeInterface;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.recipeService.recipeSelected.subscribe((recipe: RecipeInterface) => {
-      this.recipeSelected = recipe
-    })
   }
 
 }

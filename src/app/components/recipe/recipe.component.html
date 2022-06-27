@@ -3,7 +3,8 @@
     <app-recipe-list></app-recipe-list>
   </div>
   <div class="col-md-7">
-    <app-recipe-detail
+    <router-outlet></router-outlet>
+    <!-- <app-recipe-detail
       *ngIf="recipeSelected; else recipeInfo"
       [recipeDetail]="recipeSelected"
     >
@@ -12,6 +13,6 @@
       <p appBasicHiglight hilightColor="red" defaultColor="pink">
         Please select Recipe
       </p>
-    </ng-template>
+    </ng-template> -->
   </div>
 </div>
