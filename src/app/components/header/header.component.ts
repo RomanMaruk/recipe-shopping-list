@@ -6,14 +6,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Output() navigateText = new EventEmitter<string>();
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  navigate(text: string) {
-    this.navigateText.emit(text)
   }
 }
