@@ -1,8 +1,9 @@
 import { EventEmitter } from "@angular/core";
+import { Subject } from "rxjs";
 import { IngridientsInterface } from "../models/shopingList.interface";
 
 export class ShoppingListService {
-  indigredientChange = new EventEmitter<IngridientsInterface[]>()
+  indigredientChange = new Subject<IngridientsInterface[]>()
   ingredients: IngridientsInterface[] = [
     { name: 'Appeles', amount: 3 },
     { name: 'Tomatoes', amount: 5 }
@@ -17,6 +18,6 @@ export class ShoppingListService {
     if (findIndex === -1) {
       this.ingredients.push(item)
     }
-    this.indigredientChange.emit(this.ingredients.slice())
+    this.indigredientChange.next(this.ingredients.slice())
   }
 }
