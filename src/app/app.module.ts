@@ -15,7 +15,7 @@ import { BasichightlightDirective } from './directive/basic-highlight.directive'
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './services/shopping-list.service';
 import { RecipeStartComponent } from './components/recipe/recipe-start/recipe-start.component';
-import { ResipeEditComponent } from './components/recipe/resipe-edit/resipe-edit.component';
+import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { ResipeEditComponent } from './components/recipe/resipe-edit/resipe-edit
     BasichightlightDirective,
     DropdownDirective,
     RecipeStartComponent,
-    ResipeEditComponent
+    RecipeEditComponent,
   ],
   imports: [
     BrowserModule,
