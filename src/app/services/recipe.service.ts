@@ -1,5 +1,7 @@
+import { Subject } from "rxjs";
 import { RecipeInterface } from "../models/recipe.interface";
 export class RecipeService {
+  recipeChanged = new Subject<RecipeInterface[]>();
 
   private recipes: RecipeInterface[] = [
     {
@@ -28,11 +30,22 @@ export class RecipeService {
   ];
 
   getRecipes() {
-    return this.recipes.slice()
+    return this.recipes.slice();
   }
 
   getRecipe(index: number): RecipeInterface {
     return this.recipes[index]
+  }
+
+  addRecipe(recipe: RecipeInterface) {
+    this.recipes.push(recipe)
+    this.recipeChanged.next(this.recipes.slice())
+  }
+
+  updateRecipe(index: number, newRecipe: RecipeInterface) {
+    this.recipes[index] = newRecipe;
+    console.log(newRecipe)
+    this.recipeChanged.next(this.recipes.slice())
   }
 
 }
